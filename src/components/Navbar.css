@@ -1,0 +1,13 @@
+.link {
+    color: white;
+    text-decoration: none;
+}
+
+div.horizontal-scroll {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.horizontal-scroll span {
+    display: inline-block;
+}
