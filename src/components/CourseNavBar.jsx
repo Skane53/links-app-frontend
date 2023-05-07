@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import "../components/Navbar.css";
 import axios from "axios";
+import { URL } from "../App";
 
 function OneTab({courseTitle}) {
     return <span><Link className="link rounded-pill h6 bg-primary px-3 py-1 m-3" to={"/links/" + courseTitle}>{courseTitle}</Link></span>
@@ -50,7 +51,7 @@ function CourseNavBar() {
         const query = {
             query: input.query
         }
-        axios.post("http://localhost:3001/links", query);
+        axios.post(`${URL}/links`, query);
     }
 
     return (

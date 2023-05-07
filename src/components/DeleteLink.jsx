@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import "./SnackBar.css"
 import AlertMessage from "./AlertMessage";
+import { URL } from "../App";
 
 
 function DeleteLink() {
@@ -29,7 +30,7 @@ function DeleteLink() {
         const linkToBeRemoved = {
             url: input.url
         }
-        axios.post("http://localhost:3001/delete", linkToBeRemoved);
+        axios.post(`${URL}/delete`, linkToBeRemoved);
 
         if (input.url === ""){
             setMessage("Warning !!! Please fill the URL field");

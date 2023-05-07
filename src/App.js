@@ -6,6 +6,8 @@ import Links from "./components/Links";
 import CreateLink from "./components/CreateLink";
 import DeleteLink from "./components/DeleteLink";
 
+export const URL = process.env.REACT_APP_SERVER_URL;
+
 function App() {
   const [links, setLinks] = useState([
     {
