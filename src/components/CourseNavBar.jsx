@@ -57,7 +57,7 @@ function CourseNavBar() {
     return (
     <nav className="navbar bg-secondary container d-flex justify-content-between px-2">
         <div className="horizontal-scroll my-3 py-1">
-            {params.map(i=> <OneTab courseTitle={i}/>)}
+            {params.map(i=> <OneTab key={i.toString()} courseTitle={i}/>)}
         </div>
         <form class="d-flex">
             <input onChange={handleChange} class="form-control me-2" name="query" value={input.query} type="text" placeholder="Search" />

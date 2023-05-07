@@ -27,10 +27,10 @@ function Links({extension}) {
                 </div>
                 <div className="container row d-flex">
                     {links.map((link) => {
-                        return(<div className="col-12 col-sm-6 col-lg-4 col-xl-3 rounded d-flex flex-column my-3">
-                                    <a className="flex-grow-1" href={link.url}>{link.url}</a>
-                                    <div>Course Title : {link.courseTitle}</div>
-                                    <div> Course Number : {link.courseNumber}</div>
+                        return(<div key={link._id} className="col-12 col-sm-6 col-lg-4 col-xl-3 rounded d-flex flex-column my-3">
+                                    <a key={link._id} className="flex-grow-1" href={link.url}>{link.url}</a>
+                                    <div key={link._id}>Course Title : {link.courseTitle}</div>
+                                    <div key={link._id}> Course Number : {link.courseNumber}</div>
                                 </div>);
                     })}
                 </div>
