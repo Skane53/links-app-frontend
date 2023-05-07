@@ -10,7 +10,7 @@ function Links({extension}) {
     }])
 
     useEffect(()=> {
-        let route = "https://links-app-khoumzy-api.onrender.com/links" + extension;
+        let route = "https://links-app-khoumzy-api.onrender.com/links/" + extension;
         fetch(route).then(res => {
             if(res.ok){
                 return res.json()
