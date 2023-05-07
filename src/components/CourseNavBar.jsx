@@ -23,7 +23,7 @@ function CourseNavBar() {
     const [params, setParams] = useState([]);
 
     useEffect(()=> {
-        let route = "/links";
+        let route = "/links/";
         fetch(route).then(res => {
             if(res.ok){
                 return res.json()

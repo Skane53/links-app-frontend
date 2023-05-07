@@ -45,6 +45,7 @@ function App() {
           <Route path="/delete" element={<DeleteLink />} />
           {extensions.map((extension) => (
             <Route
+              key={extension.toString()}
               path={"/links/" + extension}
               element={<Links extension={"/" + extension} />}
             />
