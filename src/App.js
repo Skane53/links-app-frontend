@@ -42,7 +42,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />}></Route>
-          <Route path="/links" element={<Links extension="" />} />
+          <Route path="/links" element={<Links />} /> {/* //extension="" */}
           <Route path="/create" element={<CreateLink />} />
           <Route path="/delete" element={<DeleteLink />} />
           {extensions.map((extension) => {
