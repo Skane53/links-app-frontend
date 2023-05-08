@@ -10,11 +10,11 @@ function OneTab({courseTitle}) {
 
 function CourseNavBar() {
 
-    const [links, setLinks] = useState([{
+   /*  const [links, setLinks] = useState([{
         url: '',
         courseTitle: '',
         courseNumber: ''
-    }])
+    }]) */
 
     const [input, setInput] = useState({
         query:""
@@ -28,12 +28,12 @@ function CourseNavBar() {
             if(res.ok){
                 return res.json()
             }
-        }).then(jsonRes => setLinks(jsonRes))
+        }).then(jsonRes => setParams(Array.from(new Set(jsonRes.map(i => i.courseTitle))).sort((a, b) => a.localeCompare(b, 'fr', {ignorePunctuation:true}))))
     }, [])
 
-    useEffect(() => {
+    /* useEffect(() => {
         setParams(Array.from(new Set(links.map(i => i.courseTitle))).sort((a, b) => a.localeCompare(b, 'fr', {ignorePunctuation:true})));
-    }, [links]);
+    }, [links]); */
 
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -57,11 +57,12 @@ function CourseNavBar() {
     return (
     <nav className="navbar bg-secondary container d-flex justify-content-between px-2">
         <div className="horizontal-scroll my-3 py-1">
-            {params.map(i=> <OneTab key={i.toString()} courseTitle={i}/>)}
+            {params.map(i=> {//console.log(i); 
+                return <OneTab key={i.toString()} courseTitle={i}/>})}
         </div>
-        <form class="d-flex">
-            <input onChange={handleChange} class="form-control me-2" name="query" value={input.query} type="text" placeholder="Search" />
-            <button onClick={handleClick} class="btn btn-primary" type="button">Search</button>
+        <form className="d-flex">
+            <input onChange={handleChange} className="form-control me-2" name="query" value={input.query} type="text" placeholder="Search" />
+            <button onClick={handleClick} className="btn btn-primary" type="button">Search</button>
         </form>
     </nav>
     );

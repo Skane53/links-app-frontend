@@ -9,13 +9,13 @@ import DeleteLink from "./components/DeleteLink";
 export const URL = process.env.REACT_APP_SERVER_URL;
 
 function App() {
-  const [links, setLinks] = useState([
+  /* const [links, setLinks] = useState([
     {
       url: "",
       courseTitle: "",
       courseNumber: "",
     },
-  ]);
+  ]); */
 
   const [extensions, setExtensions] = useState([]);
 
@@ -27,12 +27,15 @@ function App() {
           return res.json();
         }
       })
-      .then((jsonRes) => setLinks(jsonRes));
+      .then((jsonRes) => {
+        console.log(jsonRes);
+        setExtensions(Array.from(new Set(jsonRes.map((i) => i.courseTitle))));
+      });
   }, []);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     setExtensions(Array.from(new Set(links.map((i) => i.courseTitle))));
-  }, [links]);
+  }, [links]); */
 
   return (
     <React.StrictMode>
@@ -43,13 +46,15 @@ function App() {
           <Route path="/links" element={<Links extension="" />} />
           <Route path="/create" element={<CreateLink />} />
           <Route path="/delete" element={<DeleteLink />} />
-          {extensions.map((extension) => (
-            <Route
-              key={extension.toString()}
-              path={"/links/" + extension}
-              element={<Links extension={"/" + extension} />}
-            />
-          ))}
+          {extensions.map((extension) => {
+            return (
+              <Route
+                key={extension}
+                path={"/links/" + extension}
+                element={<Links extension={"/" + extension} />}
+              />
+            );
+          })}
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
