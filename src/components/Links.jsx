@@ -27,7 +27,8 @@ function Links({extension}) {
                     <CourseNavBar />
                 </div>
                 <div className="container row d-flex">
-                    {links.map((link) => {                        return(<li key={"link" + links.indexOf(link) + 1} className="col-12 col-sm-6 col-lg-4 col-xl-3 rounded d-flex flex-column my-3">
+                    {links.map((link) => {
+                        return(<li key={"link" + links.indexOf(link) + 1} className="col-12 col-sm-6 col-lg-4 col-xl-3 rounded d-flex flex-column my-3">
                                     <a className="flex-grow-1" href={link.url}>{link.url}</a>
                                     <div>Course Title : {link.courseTitle}</div>
                                     <div> Course Number : {link.courseNumber}</div>

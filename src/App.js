@@ -28,7 +28,6 @@ function App() {
         }
       })
       .then((jsonRes) => {
-        console.log(jsonRes);
         setExtensions(Array.from(new Set(jsonRes.map((i) => i.courseTitle))));
       });
   }, []);
