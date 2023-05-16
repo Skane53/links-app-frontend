@@ -32,7 +32,7 @@ function CreateLink() {
             courseTitle: input.courseTitle,
             courseNumber: input.courseNumber
         }
-        axios.post("/create", newLink);
+        axios.post("https://links-app-khoumzy-api.onrender.com/create", newLink);
 
         if (input.url === "" || input.courseTitle === "" || input.courseNumber === ""){
             setMessage("Warning !!! Please fill all the fields");

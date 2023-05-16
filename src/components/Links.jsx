@@ -10,7 +10,7 @@ function Links({extension}) {
     }])
 
     extension = extension || "";
-    //console.log(extension)
+    console.log(extension)
     useEffect(()=> {
         let route = "https://links-app-khoumzy-api.onrender.com/links" + extension;
         //console.log(route);
