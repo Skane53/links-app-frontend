@@ -29,7 +29,7 @@ function DeleteLink() {
         const linkToBeRemoved = {
             url: input.url
         }
-        axios.post(`https://links-app-client.onrender.com/delete`, linkToBeRemoved);
+        axios.post(`https://links-app-khoumzy-api.onrender.com/delete`, linkToBeRemoved);
 
         if (input.url === ""){
             setMessage("Warning !!! Please fill the URL field");
