@@ -18,9 +18,14 @@ function Links({extension}) {
                 return res.json()
             }
         }).then(jsonRes => {//console.log(jsonRes) ;
-            setLinks(jsonRes)})
+            setLinks(jsonRes)
+            return jsonRes
+        }).then((res) => {console.log(res) ;
+      })
     }, [extension])
-
+    
+    //console.log(links)
+    
     return (
             <div className="container">
                 <h1 className="text-center">Links Page</h1>
