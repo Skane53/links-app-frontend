@@ -19,12 +19,10 @@ function Links({extension}) {
             }
         }).then(jsonRes => {//console.log(jsonRes) ;
             setLinks(jsonRes)
-            return jsonRes
-        }).then((res) => {console.log(res) ;
       })
     }, [extension])
     
-    //console.log(links)
+    console.log(links)
     
     return (
             <div className="container">

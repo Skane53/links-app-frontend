@@ -47,11 +47,11 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route path="/*" element={<Home />}></Route>
           <Route path="/links" element={<Links />} />
           <Route path="/create" element={<CreateLink />} />
           <Route path="/delete" element={<DeleteLink />} />
           {coursesRoutes}
-          <Route path="/*" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
