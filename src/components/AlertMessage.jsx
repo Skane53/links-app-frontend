@@ -1,3 +1,4 @@
+import React from "react";
 import "./SnackBar.css"
 
 function AlertMessage ({message, color, show}) {
