@@ -32,28 +32,26 @@ function App() {
       });
   }, []);
 
-  /*   useEffect(() => {
-    setExtensions(Array.from(new Set(links.map((i) => i.courseTitle))));
-  }, [links]); */
+  const coursesRoutes = extensions.map((extension) => {
+    return (
+      <Route
+        key={extension}
+        path={"/links/" + extension}
+        element={<Links extension={"/" + extension} />}
+      />
+    );
+  });
 
   return (
     <React.StrictMode>
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/*" element={<Home />}></Route>
           <Route path="/links" element={<Links />} />
           <Route path="/create" element={<CreateLink />} />
           <Route path="/delete" element={<DeleteLink />} />
-          {extensions.map((extension) => {
-            return (
-              <Route
-                key={extension}
-                path={"/links/" + extension}
-                element={<Links extension={"/" + extension} />}
-              />
-            );
-          })}
+          {coursesRoutes}
+          <Route path="/*" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
