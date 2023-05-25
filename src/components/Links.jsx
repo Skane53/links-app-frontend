@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import CourseNavBar from "./CourseNavBar";
 
-function Links({extension}) {
+function Links({route}) {
 
     const [links, setLinks] = useState([{
         url: '',
@@ -9,10 +9,9 @@ function Links({extension}) {
         courseNumber: ''
     }])
 
-    extension = extension || "";
+    route = route || "";
     useEffect(()=> {
-        let route = "https://links-app-khoumzy-api.onrender.com/links" + extension;
-        console.log(route);
+
         fetch(route).then(res => {
             if(res.ok){
                 return res.json()
@@ -20,7 +19,7 @@ function Links({extension}) {
         }).then(jsonRes => {//console.log(jsonRes) ;
             setLinks(jsonRes)
       })
-    }, [extension])
+    }, [route])
     
     console.log(links)
     
