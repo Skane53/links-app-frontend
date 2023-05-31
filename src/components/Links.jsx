@@ -9,9 +9,9 @@ function Links({route}) {
         courseNumber: ''
     }])
 
-    route = route || "";
+    route = route || "/links";
     useEffect(()=> {
-
+        console.log(route)
         fetch(route).then(res => {
             if(res.ok){
                 return res.json()
@@ -21,7 +21,7 @@ function Links({route}) {
       })
     }, [route])
     
-    console.log(links)
+    //console.log(links)
     
     return (
             <div className="container">
