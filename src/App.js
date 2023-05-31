@@ -57,7 +57,7 @@ function App() {
           <Route path="/links" element={<Links />} />
           <Route path="/create" element={<CreateLink />} />
           <Route path="/delete" element={<DeleteLink />} />
-          {/* {coursesRoutes} */}
+          {coursesRoutes}
         </Routes>
       </BrowserRouter>
     </React.StrictMode>
